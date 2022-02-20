@@ -11,17 +11,9 @@ npm i를 실행하여 주시면 됩니다.
 [http://localhost:3000]에 접속한 후, 화면 중앙 [회원가입 없이 계속하기]를 클릭하시면 
 기존에 등록되어 있는 계정으로 로그인이 됩니다.
 
+## 화면 구성
+화면 상단 네비게이션 우측편에 회원 계정 상태와 각종 버튼이 있습니다.
 화면 왼쪽은 나의 프로필, 화면 오른쪽은 조회할 상대방의 프로필입니다.
-가운데 화면은 전체 검색창으로 쓰이며 나의 데이터는 왼쪽 고정 메뉴바 상단에 조그만 검색창을 통해
+가운데 화면은 전체 검색을 하는 데 쓰이며 나의 데이터는 왼쪽 고정 메뉴바 상단에 조그만 검색창을 통해
 검색하실 수 있습니다.
-
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+왼쪽 고정 메뉴바를 클릭하면 그 클릭된 값에 따라 화면에 표시되는 내용이 변경됩니다. 
