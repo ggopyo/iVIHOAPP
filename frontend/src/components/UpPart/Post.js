@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import Favorite from "@mui/icons-material/Favorite";
-import { like, unlike } from "../../apiCalls/tryData";
+import { like, unlike } from "../../apiCalls/general/tryData";
 import { useSelector } from "react-redux";
 import Comments from "./Comments";
 

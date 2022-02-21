@@ -12,7 +12,11 @@ import React from "react";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getOneEmail, getOneId, userRegister } from "../../apiCalls/apiCalls";
+import {
+  getOneEmail,
+  getOneId,
+  userRegister,
+} from "../../apiCalls/general/apiCalls";
 import "./RegistrationForm.css";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";

@@ -21,7 +21,7 @@ import {
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { afs } from "../../apiCalls/tryData";
+import { afs } from "../../apiCalls/general/tryData";
 import FollowProfileButton from "./FollowProfileButton";
 
 const UserProfile = (props) => {

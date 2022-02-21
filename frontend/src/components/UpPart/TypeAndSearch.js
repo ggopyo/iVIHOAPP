@@ -10,7 +10,7 @@ const TypeAndSearch = (props) => {
   const { searchInputHandleSubmit, searchUpdated, result } = searchInputProps;
   useEffect(() => {}, [searchUpdated]);
   const [searchText, setSearchText] = useState(null);
-  const [selectedIndex, setSelectedIndex] = useState();
+  // const [selectedIndex, setSelectedIndex] = useState();
 
   return (
     <div style={{ overflow: "hidden", width: "358px" }}>

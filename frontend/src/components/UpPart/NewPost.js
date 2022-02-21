@@ -5,14 +5,11 @@ import PropTypes from "prop-types";
 import { Backdrop, CardActions } from "@mui/material";
 
 import { useLocation } from "react-router-dom";
-import {
-  createPost,
-  modifyNewest,
-} from "../../apiCalls/tryData";
-import { Box} from "@mui/system";
+import { createPost, modifyNewest } from "../../apiCalls/general/tryData";
+import { Box } from "@mui/system";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@mui/styles";
-import { dataRequest } from "../../apiCalls/requestMethod";
+import { dataRequest } from "../../apiCalls/general/requestMethod";
 import HowtoComponent from "./HowtoComponent";
 import YouTubeComponent from "./YouTubeComponent";
 import ImageComponent from "./ImageComponent";

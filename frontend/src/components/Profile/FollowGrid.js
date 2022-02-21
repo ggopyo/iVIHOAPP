@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { dataRequest } from "../../apiCalls/requestMethod";
+import { dataRequest } from "../../apiCalls/general/requestMethod";
 import { Avatar, Grid, Typography } from "@mui/material";
 
 export default function FollowGrid(props) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOneId, userRegister } from "../apiCalls";
+import { getOneId, userRegister } from "../general/apiCalls";
 const KakaoRegistered = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.login.currentUser);

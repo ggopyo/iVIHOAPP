@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import Spinner from "../../components/Spinner";
-import SideBar from "../../components/Sidebar/SideBar";
 import MuiNavbar from "../../components/Navbar/MuiNavbar";
-import Logo from "../../components/Logo";
 import { slide as Menu } from "react-burger-menu";
 const qs = require("qs");
-const { kakaoLogin } = require("../apiCalls");
+const { kakaoLogin } = require("../general/apiCalls");
 
 const kakao = {
   clientID: "8bd3289d1260c7686f31ae5cb5ee0ccb",
@@ -52,10 +50,6 @@ const PassKakaoCode = () => {
     <div>
       <MuiNavbar style={{ width: "100%" }} />
       <div style={{ paddingTop: "61px" }}>
-        <Menu>
-          <SideBar />
-        </Menu>
-        <Logo />
         <Spinner />
       </div>
     </div>

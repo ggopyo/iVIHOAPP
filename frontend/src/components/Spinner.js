@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
-import SideBar from "./Sidebar/SideBar";
-import MuiNavbar from "./Navbar/MuiNavbar";
-import Logo from "./Logo";
 import { slide as Menu } from "react-burger-menu";
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`

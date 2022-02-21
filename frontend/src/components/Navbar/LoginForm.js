@@ -3,10 +3,10 @@ import React from "react";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { userLogin } from "../../apiCalls/apiCalls";
+import { userLogin } from "../../apiCalls/general/apiCalls";
 import "./RegistrationForm.css";
 import { select } from "../../redux/postRedux";
-import { publicRequest } from "../../apiCalls/requestMethod";
+import { publicRequest } from "../../apiCalls/general/requestMethod";
 import { makeStyles } from "@mui/styles";
 const LoginForm = ({ registrationHandleOpen }) => {
   const [username, setUsername] = useState("");

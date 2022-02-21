@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import { useSelector } from "react-redux";
-import { uncomment } from "../../apiCalls/tryData";
+import { uncomment } from "../../apiCalls/general/tryData";
 import { Avatar, ButtonBase, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import ReactReadMoreReadLess from "react-read-more-read-less";

@@ -19,8 +19,11 @@ import axios from "axios";
 import { Button, Container, Paper } from "@mui/material";
 import Blur from "react-css-blur";
 import Spinner from "../Spinner";
-import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
-import { afs } from "../../apiCalls/tryData";
+import {
+  dataRequest,
+  publicRequest,
+} from "../../apiCalls/general/requestMethod";
+import { afs } from "../../apiCalls/general/tryData";
 import { Box } from "@mui/system";
 
 const Loading = () => (

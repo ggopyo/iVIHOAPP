@@ -1,7 +1,10 @@
 import { Fragment, useState } from "react";
 import useVirtual from "react-cool-virtual";
 import "./styles.css";
-import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
+import {
+  dataRequest,
+  publicRequest,
+} from "../../apiCalls/general/requestMethod";
 
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";

@@ -14,12 +14,8 @@ import {
 import { makeStyles } from "@mui/styles";
 
 import MyList from "./MyList";
-import { useLocation } from "react-router-dom";
-import { publicRequest } from "../../apiCalls/requestMethod";
 import { useCallback } from "react";
 export default function RightTab(props) {
-  const location = useLocation();
-
   const onYourItemClick = useCallback((event, j) => {
     setYourDataItem(j);
   }, []);

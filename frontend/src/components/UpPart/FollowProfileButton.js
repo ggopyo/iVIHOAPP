@@ -1,6 +1,6 @@
 import React from "react";
-import { dataRequest } from "../../apiCalls/requestMethod";
-import { getOneUserById } from "../../apiCalls/tryData";
+import { dataRequest } from "../../apiCalls/general/requestMethod";
+import { getOneUserById } from "../../apiCalls/general/tryData";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/loginRedux";

@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {
-  Comment,
-} from "@mui/icons-material";
-import {
-  Avatar,
-  IconButton,
-  Paper,
-  TextField,
-} from "@mui/material";
-import {
-  comment,
-  like,
-  unlike,
-} from "../../apiCalls/tryData";
+import { Comment } from "@mui/icons-material";
+import { Avatar, IconButton, Paper, TextField } from "@mui/material";
+import { comment, like, unlike } from "../../apiCalls/general/tryData";
 import { useSelector } from "react-redux";
 import Comments from "./Comments";
 import { Box } from "@mui/system";

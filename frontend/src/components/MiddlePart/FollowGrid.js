@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { dataRequest } from "../../apiCalls/requestMethod";
+import { dataRequest } from "../../apiCalls/general/requestMethod";
 import { Avatar, Grid, Link, Typography } from "@mui/material";
 
 export default function FollowGrid(props) {

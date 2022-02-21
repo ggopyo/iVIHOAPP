@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Box, Container } from "@mui/material";
 
 import { useSelector } from "react-redux";
-import { getOneUserByUsername } from "../../apiCalls/tryData";
+import { getOneUserByUsername } from "../../apiCalls/general/tryData";
 import First from "./First";
 import Search from "./Search";
 import Middle from "./Middle";
-import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
+import {
+  dataRequest,
+  publicRequest,
+} from "../../apiCalls/general/requestMethod";
 import { useLocation } from "react-router-dom";
 const View = (props) => {
   const {

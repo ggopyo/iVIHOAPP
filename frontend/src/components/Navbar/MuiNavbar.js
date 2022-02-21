@@ -396,7 +396,13 @@ export default function MuiNavbar(props) {
             ) : (
               <>
                 {" "}
-                <Typography style={{ marginTop: "8px", marginRight: "10px" }}>
+                <Typography
+                  style={{
+                    marginTop: "8px",
+                    marginRight: "10px",
+                    color: "black",
+                  }}
+                >
                   {currentUser.email.includes("kakao.com")
                     ? currentUser.name
                     : currentUser.username}

@@ -3,12 +3,12 @@ import MuiNavbar from "../components/Navbar/MuiNavbar";
 import ProfileView from "../components/UpPart/ProfileView";
 import ModifyPage from "../components/UpPart/ModifyPage";
 import FixedSideBar from "../components/UpPart/FixedSideBar";
-import { useDispatch, useSelector } from "react-redux";
-import { dataRequest, publicRequest } from "../apiCalls/requestMethod";
+import { useSelector } from "react-redux";
+import { dataRequest, publicRequest } from "../apiCalls/general/requestMethod";
 import { Container } from "@mui/material";
+import { searchRegex } from "../regex/regex";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const [tab, setTab] = useState(0);
 
   const currentUser = useSelector((state) => state.login.currentUser);
@@ -178,10 +178,6 @@ const Home = () => {
     getCurrentUser(currentUser);
   }, [mineUpdated, currentUser]);
 
-  const myProfileGroup = { addUpdate, clickFollowButton, values };
-
-  const myDataGroup = { mineUpdated, myPosts, values, addUpdate, myStatistic };
-
   const mySearchInputHandleSubmit = (event, mySearchText) => {
     event.preventDefault();
 
@@ -242,14 +238,11 @@ const Home = () => {
         console.log(err);
       }
     };
-    const regex = /.{2,}/; // 모든 문자열 : 알파벳+숫자만/[0-9a-zA-Z]{2,}/
-    // console.log(searchText.match(regex));
-    if (mySearchText.match(regex)) searchContents(mySearchText);
-    // setSearchText("");
+
+    if (mySearchText.match(searchRegex)) searchContents(mySearchText);
   };
   const searchInputHandleSubmit = (event, searchText) => {
     event.preventDefault();
-
     event.target.reset();
     setSearchUpdated(true);
 
@@ -271,11 +264,12 @@ const Home = () => {
         console.log(err);
       }
     };
-    const regex = /.{2,}/; // 모든 문자열 : 알파벳+숫자만/[0-9a-zA-Z]{2,}/
-    // console.log(searchText.match(regex));
-    if (searchText.match(regex)) searchContents(searchText);
-    // setSearchText("");
+
+    if (searchText.match(searchRegex)) searchContents(searchText);
   };
+
+  const myProfileGroup = { addUpdate, clickFollowButton, values };
+  const myDataGroup = { mineUpdated, myPosts, values, addUpdate, myStatistic };
 
   const searchInputProps = {
     searchInputHandleSubmit,
@@ -346,7 +340,6 @@ const Home = () => {
         style={{ marginLeft: "80px", marginRight: "0px", width: "1200px" }}
       >
         <div
-          // src="https://images.theconversation.com/institutions/1260/logos/logo-1424731486.png?ixlib=rb-1.1.0&q=45&auto=format&w=170&h=170"
           style={{
             width: "99%",
             height: "30px",

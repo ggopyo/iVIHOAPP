@@ -9,8 +9,6 @@ import Typography from "@mui/material/Typography";
 import { Button, Paper } from "@mui/material";
 import { Box } from "@mui/system";
 import { useSelector } from "react-redux";
-import { afs } from "../apiCalls/tryData";
-import { dataRequest } from "../apiCalls/requestMethod";
 export default function AlignItemsList() {
   const cp = useSelector((state) => state.post.currentPost);
 

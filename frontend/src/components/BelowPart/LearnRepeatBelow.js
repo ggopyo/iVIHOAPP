@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { publicRequest } from "../../apiCalls/requestMethod";
+import { publicRequest } from "../../apiCalls/general/requestMethod";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Box, Container } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import { getOneUserByUsername } from "../../apiCalls/tryData";
+import { getOneUserByUsername } from "../../apiCalls/general/tryData";
 
 import LeftTab from "./LeftTab";
 import PicDouble from "./PicDouble";
@@ -156,7 +156,6 @@ const LearnRepeatBelow = () => {
             pb: 0.1,
           }}
         >
-          {" "}
           <PicDouble dataItem={yourDataItem} whichSide="right" />
         </Box>
       </div>

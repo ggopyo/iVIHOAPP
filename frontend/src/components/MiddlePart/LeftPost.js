@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import Favorite from "@mui/icons-material/Favorite";
 import ReactReadMoreReadLess from "react-read-more-read-less";
-import { like, unlike } from "../../apiCalls/tryData";
+import { like, unlike } from "../../apiCalls/general/tryData";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";

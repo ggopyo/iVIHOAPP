@@ -5,7 +5,6 @@ import PassKakaoCode from "./apiCalls/kakao/PassKakaoCode";
 import KakaoLogin from "./apiCalls/kakao/KakaoLogin.js";
 import Home from "./pages/Home";
 import RegistrationForm from "./components/Navbar/RegistrationForm";
-import LoginForm from "./components/UpPart/LoginForm";
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/kakaoregistered" element={<KakaoRegistered />} />
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegistrationForm />} />
-        <Route path="/login" element={<LoginForm />} />
       </Routes>
     </Router>
   );

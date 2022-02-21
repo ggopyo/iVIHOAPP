@@ -1,5 +1,5 @@
 import { Paper } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import FirstTab from "./FirstTab";
 
 export default function Profile(props) {

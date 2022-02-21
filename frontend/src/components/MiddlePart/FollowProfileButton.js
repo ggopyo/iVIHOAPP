@@ -1,5 +1,5 @@
 import React from "react";
-import { dataRequest } from "../../apiCalls/requestMethod";
+import { dataRequest } from "../../apiCalls/general/requestMethod";
 import { Button } from "@mui/material";
 
 export default function FollowProfileButton(props) {
