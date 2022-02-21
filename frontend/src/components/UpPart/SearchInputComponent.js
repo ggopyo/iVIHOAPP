@@ -1,16 +1,8 @@
-import {
-  alpha,
-  Divider,
-  InputBase,
-  styled,
-  InputAdornment,
-} from "@mui/material";
-import React, { useState, useRef, useEffect } from "react";
+import { Divider } from "@mui/material";
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { makeStyles } from "@mui/styles";
 import { TextField } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
-import { afs } from "../../apiCalls/tryData";
 const SearchInputComponent = (props) => {
   const { setSearchText, searchText } = props;
 
@@ -19,7 +11,6 @@ const SearchInputComponent = (props) => {
       border: "none",
     },
   }));
-  const textInput = useRef();
   const classes = useStyles();
 
   return (

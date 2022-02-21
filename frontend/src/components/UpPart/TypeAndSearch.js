@@ -1,37 +1,13 @@
-import {
-  Avatar,
-  Button,
-  ButtonBase,
-  Chip,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemButton,
-  ListItemText,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { afs } from "../../apiCalls/tryData";
-import { dataRequest } from "../../apiCalls/requestMethod";
 
 import SearchInputComponent from "./SearchInputComponent";
-import { Comment, Favorite } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
 import SearchResultComponent from "./SearchResultComponent";
 
 const TypeAndSearch = (props) => {
   const { searchInputProps, triggerTabObject, mySearchInputProps } = props;
 
-  const {
-    searchInputHandleSubmit,
-    searchUpdated,
-    setSearchUpdated,
-    result,
-    setTab,
-  } = searchInputProps;
+  const { searchInputHandleSubmit, searchUpdated, result } = searchInputProps;
   useEffect(() => {}, [searchUpdated]);
   const [searchText, setSearchText] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState();

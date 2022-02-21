@@ -1,18 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { afs, comment, uncomment } from "../../apiCalls/tryData";
-import {
-  Avatar,
-  ButtonBase,
-  Card,
-  Icon,
-  Paper,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { uncomment } from "../../apiCalls/tryData";
+import { Avatar, ButtonBase, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CalendarToday, Delete } from "@mui/icons-material";
@@ -127,9 +117,3 @@ export default function Comments(props) {
     </Box>
   );
 }
-
-Comments.propTypes = {
-  postid: PropTypes.string.isRequired,
-  comments: PropTypes.array.isRequired,
-  updateComments: PropTypes.func.isRequired,
-};

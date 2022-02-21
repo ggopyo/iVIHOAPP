@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { afs } from "../../apiCalls/tryData";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Box, Paper } from "@mui/material";
 import { select, selectFailure } from "../../redux/postRedux";
 import { makeStyles } from "@mui/styles";

@@ -1,46 +1,20 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import FollowGrid from "./FollowGrid";
-import PostList from "./PostList";
-import { afs } from "../../apiCalls/tryData";
-import NewPost from "./NewPost";
-import ProfileImageData from "./ProfileImageData";
 import PostStatistics from "./PostStatistics";
 import NeedSelectUser from "./NeedSelectUser";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import { List } from "@mui/material";
 import {
   AppBar,
-  Avatar,
-  Button,
-  Container,
   Divider,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
   Paper,
   Tab,
   Tabs,
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Box } from "@mui/system";
-import {
-  Email,
-  FindInPage,
-  GetApp,
-  GitHub,
-  Send,
-  SwapHoriz,
-} from "@mui/icons-material";
 import { useSelector } from "react-redux";
 import Following from "./Following";
 import Follower from "./Follower";
 import UserProfile from "./UserProfile";
-import Statistics from "./Statistics";
 
 export default function ProfileTabs(props) {
   const {

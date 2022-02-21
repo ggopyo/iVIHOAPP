@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { afs, comment } from "../../apiCalls/tryData";
-import { Avatar, Card, Icon, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Icon, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CalendarToday } from "@mui/icons-material";

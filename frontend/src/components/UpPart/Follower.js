@@ -9,10 +9,8 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
-import { afs } from "../../apiCalls/tryData";
 
 const Follower = (props) => {
   const { userStatus, whichSide } = props;

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { AppBar, Button, Divider, Tab, Tabs } from "@mui/material";
 import SidebarSearchInputComponent from "./SidebarSearchInputComponent";
-import { SettingsBackupRestore } from "@mui/icons-material";
 const FixedSideBar = (props) => {
   const {
-    myRef,
-    secondRef,
-    searchRef,
     tab,
     handleTabChange,
     sidebarHandle,

@@ -1,43 +1,15 @@
 import React, { useEffect, useState } from "react";
-import MyList from "./MyList";
-import YourList from "./YourList";
 
-import LoginIcon from "@mui/icons-material/Login";
-import SwapVertIcon from "@mui/icons-material/SwapVert";
 import { publicRequest } from "../../apiCalls/requestMethod";
 import { useCallback } from "react";
-import UseMyCard from "./UseMyCard";
-import UseYourCard from "./UseYourCard";
 import { useSelector } from "react-redux";
-import {
-  Avatar,
-  Backdrop,
-  Box,
-  Button,
-  Container,
-  Fade,
-  Modal,
-  Typography,
-} from "@mui/material";
-import LoginForm from "../Navbar/LoginForm";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import { Link, useLocation } from "react-router-dom";
-import { afs, getOneUserByUsername, log } from "../../apiCalls/tryData";
-import RightTab from "./RightTab";
+import { Box, Container } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { getOneUserByUsername } from "../../apiCalls/tryData";
+
 import LeftTab from "./LeftTab";
 import PicDouble from "./PicDouble";
-const loginStyle = {
-  position: "absolute",
-  top: "-5%",
-  left: "224%",
-  transform: "translate(50%, 50%)",
-  width: 338,
-  height: 180,
-  bgcolor: "background.paper",
-  border: "none",
-  boxShadow: 24,
-  p: 4,
-};
+
 const LearnRepeatBelow = () => {
   const onMyItemClick = useCallback((event, j) => {
     console.log("내 아이템 선택 : ", event.currentTarget, j);

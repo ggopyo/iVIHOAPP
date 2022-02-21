@@ -1,14 +1,7 @@
-import {
-  AddLink,
-  Cancel,
-  Done,
-  PhotoCamera,
-  Wallpaper,
-} from "@mui/icons-material";
+import { AddLink, Cancel, Done, PhotoCamera } from "@mui/icons-material";
 import {
   Button,
   ButtonBase,
-  Divider,
   Icon,
   Paper,
   TextField,

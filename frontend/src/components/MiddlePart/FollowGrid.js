@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 
 import { dataRequest } from "../../apiCalls/requestMethod";
 import { Avatar, Grid, Link, Typography } from "@mui/material";
@@ -31,7 +30,3 @@ export default function FollowGrid(props) {
     </div>
   );
 }
-
-FollowGrid.propTypes = {
-  people: PropTypes.array.isRequired,
-};

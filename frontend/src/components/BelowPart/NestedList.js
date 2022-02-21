@@ -13,21 +13,8 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import CottageIcon from "@mui/icons-material/Cottage";
-import { Avatar, Badge, ListItem, ListItemAvatar } from "@mui/material";
-import {
-  Toolbar,
-  Backdrop,
-  Box,
-  AppBar,
-  Button,
-  Fade,
-  Modal,
-  Typography,
-  IconButton,
-  InputBase,
-  MenuItem,
-  Menu,
-} from "@mui/material";
+import { Avatar, Badge, Fade, ListItem, ListItemAvatar } from "@mui/material";
+import { Backdrop, Box, Button, Modal } from "@mui/material";
 import ListSearchForm from "./ListSearchForm";
 import LoginForm from "../Navbar/LoginForm";
 import { useSelector } from "react-redux";

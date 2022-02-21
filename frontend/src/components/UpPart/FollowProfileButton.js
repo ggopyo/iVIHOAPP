@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import { dataRequest } from "../../apiCalls/requestMethod";
-import { afs, getOneUserById } from "../../apiCalls/tryData";
+import { getOneUserById } from "../../apiCalls/tryData";
 import { Button } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../../redux/selectedUserRedux";
+import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/loginRedux";
 
 export default function FollowProfileButton({ onButtonClick, userStatus }) {

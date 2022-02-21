@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { afs } from "../../apiCalls/tryData";
 
 const Following = (props) => {
   const { userStatus, whichSide } = props;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import MyList from "./MyList";
 import YourList from "./YourList";
 
-import LoginIcon from "@mui/icons-material/Login";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
 import { publicRequest } from "../../apiCalls/requestMethod";
 import { useCallback } from "react";
@@ -17,7 +16,6 @@ import {
   Container,
   Fade,
   Modal,
-  Typography,
 } from "@mui/material";
 import LoginForm from "../Navbar/LoginForm";
 import ShuffleIcon from "@mui/icons-material/Shuffle";

@@ -5,8 +5,6 @@ import {
   FormControl,
   IconButton,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
   Paper,
   TextField,
 } from "@mui/material";

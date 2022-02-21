@@ -1,31 +1,16 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import {
-  AccountCircle,
   Comment,
-  Delete,
-  FavoriteBorder,
-  Person,
 } from "@mui/icons-material";
 import {
   Avatar,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Divider,
   IconButton,
-  InputAdornment,
   Paper,
   TextField,
-  Typography,
 } from "@mui/material";
-import Favorite from "@mui/icons-material/Favorite";
 import {
-  afs,
   comment,
-  getOneData1,
   like,
   unlike,
 } from "../../apiCalls/tryData";

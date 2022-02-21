@@ -13,12 +13,9 @@ import {
   Badge,
   MenuItem,
   Menu,
-  Divider,
   Paper,
 } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -31,10 +28,9 @@ import NotificationForm from "./NotificationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/loginRedux";
 import { selectOff } from "../../redux/selectedUserRedux";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchInputComponent from "../UpPart/SearchInputComponent";
 import { useState } from "react";
-import { afs } from "../../apiCalls/tryData";
 const registrationStyle = {
   position: "absolute",
   top: "45%",

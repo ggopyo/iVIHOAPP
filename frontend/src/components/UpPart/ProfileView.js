@@ -1,38 +1,17 @@
-import React, { useCallback, useEffect, useState } from "react";
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Container,
-  Divider,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
-import {
-  KeyboardArrowDown,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-  KeyboardArrowUp,
-  SwapHoriz,
-  SwapVert,
-} from "@mui/icons-material";
+import React, { useEffect, useState } from "react";
+import { Box, Container } from "@mui/material";
 
-import { useDispatch, useSelector } from "react-redux";
-import { afs, getOneUserByUsername } from "../../apiCalls/tryData";
+import { useSelector } from "react-redux";
+import { getOneUserByUsername } from "../../apiCalls/tryData";
 import First from "./First";
 import Search from "./Search";
 import Middle from "./Middle";
 import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
 import { useLocation } from "react-router-dom";
-import { select } from "../../redux/postRedux";
-import { makeStyles } from "@mui/styles";
 const View = (props) => {
   const {
     executeScroll,
     executeScroll2,
-    executeScroll3,
     myRef,
     secondRef,
     searchRef,

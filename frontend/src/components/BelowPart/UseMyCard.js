@@ -1,5 +1,5 @@
 import React from "react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import "./styles.css";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
@@ -13,7 +13,6 @@ import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { afs } from "../../apiCalls/tryData";
 
 // import Blur from "react-blur";
 const UseMyCard = ({ myUserData, myDataOne }) => {

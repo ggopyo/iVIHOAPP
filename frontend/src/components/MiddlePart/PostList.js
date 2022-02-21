@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Post from "./RightPost";
-import { afs } from "../../apiCalls/tryData";
 
 export default function Front(props) {
   return (
@@ -12,6 +10,3 @@ export default function Front(props) {
     </div>
   );
 }
-Front.propTypes = {
-  posts: PropTypes.array.isRequired,
-};

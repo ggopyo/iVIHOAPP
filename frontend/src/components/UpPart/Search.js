@@ -1,30 +1,8 @@
-import { Edit } from "@mui/icons-material";
-import {
-  Avatar,
-  Box,
-  Divider,
-  IconButton,
-  Button,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  ListItemText,
-  Paper,
-  Typography,
-  Icon,
-  TableContainer,
-} from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Divider, Paper } from "@mui/material";
+import React from "react";
 import { useSelector } from "react-redux";
-import SearchTab from "./SearchTab";
-import FollowProfileButton from "./FollowProfileButton";
-import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
-import NewPost from "./NewPost";
 import TypeAndSearch from "./TypeAndSearch";
 import LoginForm from "../Navbar/LoginForm";
-import BottomBar from "../Navbar/BottomBar";
 
 export default function Profile(props) {
   const {

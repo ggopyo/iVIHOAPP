@@ -2,12 +2,9 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import { afs } from "../../apiCalls/tryData";
 
 export default function TitlebarBelowImageList(props) {
   return (
-    // https://img.youtube.com/vi/Ykbl9j6z6ko/default.jpg
-    // http://youtube.com/get_video_info?video_id=XXXXXXXX
     <ImageList sx={{ width: 361, height: 240 }} cols={3}>
       {props.posts.map((item) => (
         <ImageListItem key={item._id} style={{ width: "100px" }}>

@@ -1,27 +1,10 @@
-import { Edit } from "@mui/icons-material";
-import {
-  Avatar,
-  Box,
-  Divider,
-  IconButton,
-  Button,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  ListItemText,
-  Paper,
-  Typography,
-  Icon,
-} from "@mui/material";
+import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SearchTab from "./SearchTab";
-import FollowProfileButton from "./FollowProfileButton";
 import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
-import { getOneUserByUsername, clg, cdg, afs } from "../../apiCalls/tryData";
-import NewPost from "./NewPost";
+import { getOneUserByUsername } from "../../apiCalls/tryData";
 
 export default function Back() {
   const location = useLocation();

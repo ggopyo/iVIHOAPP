@@ -1,15 +1,11 @@
 import {
-  AutoAwesome,
   AutoAwesomeMotion,
   Comment,
   Favorite,
-  Numbers,
   SwapHorizontalCircle,
-  Wallpaper,
 } from "@mui/icons-material";
-import { ButtonBase, Paper, Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import React from "react";
-import { useSelector } from "react-redux";
 
 const PostStatistic = (props) => {
   const { statistic } = props;

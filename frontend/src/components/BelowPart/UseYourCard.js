@@ -1,5 +1,5 @@
 import React from "react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import "./styles.css";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
@@ -15,8 +15,6 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Blur from "react-css-blur";
 const UseYourCard = ({ yourUserData, yourDataOne }) => {
-  // { yourUserData, yourData }
-  //   console.log(yourDataOne);
   return (
     <div>
       <Card sx={{ height: 215, width: "100%", mb: "10px" }}>

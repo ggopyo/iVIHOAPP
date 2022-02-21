@@ -1,18 +1,10 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  Paper,
-  TextField,
-} from "@mui/material";
+import { Button, FormControl, TextField } from "@mui/material";
 import React from "react";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../apiCalls/apiCalls";
 import "./RegistrationForm.css";
-import { afs } from "../../apiCalls/tryData";
 import { select } from "../../redux/postRedux";
 import { publicRequest } from "../../apiCalls/requestMethod";
 import { makeStyles } from "@mui/styles";
@@ -179,7 +171,7 @@ const LoginForm = ({ registrationHandleOpen }) => {
           variant="outlined"
           onClick={() => guestLogin()}
         >
-          회원 가입없이 계속하기
+          회원가입 없이 계속하기
         </Button>
       </Box>
     </>

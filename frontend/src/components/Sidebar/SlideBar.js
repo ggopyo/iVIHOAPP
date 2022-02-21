@@ -1,42 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./SlideBar.css";
-import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import NestedList from "./NestedList";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import {
-  AppBar,
-  Avatar,
-  Button,
-  Container,
-  Divider,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Paper,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Box, width } from "@mui/system";
-import {
-  Email,
-  FindInPage,
-  GetApp,
-  GitHub,
-  Send,
-  SwapHoriz,
-} from "@mui/icons-material";
+import { Avatar, Button, Container, Typography } from "@mui/material";
+import { Email, FindInPage, GitHub, Send } from "@mui/icons-material";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 const SlideBar = (props) => {
-  const location = useLocation();
-  const [userInfo, setUserInfo] = useState({});
-  const [howtoInfo, setHowtoInfo] = useState([]);
-
   return (
     <div>
       <Container

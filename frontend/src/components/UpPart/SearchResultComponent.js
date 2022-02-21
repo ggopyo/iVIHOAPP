@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Avatar,
-  Button,
   ButtonBase,
   Chip,
   Divider,
@@ -14,13 +13,8 @@ import {
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Comment, Favorite } from "@mui/icons-material";
-import { afs } from "../../apiCalls/tryData";
-import { select, selectFailure, selectPost } from "../../redux/postRedux";
-import {
-  selectedUserSlice,
-  selectUser,
-  selectUserFailure,
-} from "../../redux/selectedUserRedux";
+import { select, selectFailure } from "../../redux/postRedux";
+import { selectUser, selectUserFailure } from "../../redux/selectedUserRedux";
 import { useDispatch, useSelector } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 const SearchResultComponent = (props) => {

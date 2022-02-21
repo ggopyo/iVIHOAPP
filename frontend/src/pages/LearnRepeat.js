@@ -1,40 +1,11 @@
-import {
-  KeyboardArrowDown,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-  KeyboardArrowUp,
-  SettingsSystemDaydreamTwoTone,
-  SwapHoriz,
-  SwapVert,
-} from "@mui/icons-material";
-
-import Back from "../components/MiddlePart/Back";
 import LeftPost from "../components/MiddlePart/LeftPost";
 import Pic from "../components/MiddlePart/Pic";
-import { Edit } from "@mui/icons-material";
 
-import {
-  Avatar,
-  Container,
-  Box,
-  Divider,
-  IconButton,
-  Button,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  ListItemText,
-  Paper,
-  Typography,
-  Icon,
-} from "@mui/material";
+import { Container, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { dataRequest, publicRequest } from "../apiCalls/requestMethod";
-import { getOneUserById, clg, cdg, afs, getOneData } from "../apiCalls/tryData";
 import RightPost from "../components/MiddlePart/RightPost";
 
 const LearnRepeat = () => {

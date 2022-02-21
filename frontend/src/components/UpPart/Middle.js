@@ -1,24 +1,5 @@
-import { Edit } from "@mui/icons-material";
-import {
-  Avatar,
-  Box,
-  Divider,
-  IconButton,
-  Button,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
-  ListItemText,
-  Paper,
-  Typography,
-  Icon,
-} from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
 import MiddleTab from "./MiddleTab";
-import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
 
 export default function Profile(props) {
   const { triggerTabObject, myProfileGroup, yourStatistic } = props;

@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
 import useVirtual from "react-cool-virtual";
-import axios from "axios";
 import "./styles.css";
 import { dataRequest, publicRequest } from "../../apiCalls/requestMethod";
 

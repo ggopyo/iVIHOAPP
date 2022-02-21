@@ -1,34 +1,22 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import {
   CalendarToday,
   Comment,
-  Delete,
   FavoriteBorder,
   Person,
 } from "@mui/icons-material";
 import {
-  AppBar,
   Avatar,
   Card,
-  CardActions,
   CardContent,
-  CardHeader,
-  Chip,
   Divider,
   IconButton,
-  Paper,
-  Tab,
-  Tabs,
-  TextField,
   Typography,
 } from "@mui/material";
 import Favorite from "@mui/icons-material/Favorite";
 import ReactReadMoreReadLess from "react-read-more-read-less";
-import { afs, getOneData1, like, unlike } from "../../apiCalls/tryData";
+import { like, unlike } from "../../apiCalls/tryData";
 import { useSelector } from "react-redux";
-import Comments from "../Profile/Comments";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 
@@ -235,8 +223,4 @@ const TabContainer = (props) => {
       {props.children}
     </Typography>
   );
-};
-
-Post.propTypes = {
-  post: PropTypes.object.isRequired,
 };

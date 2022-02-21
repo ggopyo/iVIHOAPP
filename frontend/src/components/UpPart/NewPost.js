@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import Compressor from "compressorjs";
 import PropTypes from "prop-types";
 
-import { Backdrop, CardActions, InputAdornment } from "@mui/material";
-import ModalShowUp from "../WholePage/ModalShowUp";
+import { Backdrop, CardActions } from "@mui/material";
 
 import { useLocation } from "react-router-dom";
 import {
-  afs,
   createPost,
-  getOneUserByUsername,
   modifyNewest,
 } from "../../apiCalls/tryData";
-import { Box, createTheme, flexbox } from "@mui/system";
+import { Box} from "@mui/system";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@mui/styles";
 import { dataRequest } from "../../apiCalls/requestMethod";

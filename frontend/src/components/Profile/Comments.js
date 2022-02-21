@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { afs, comment } from "../../apiCalls/tryData";
+import {  comment } from "../../apiCalls/tryData";
 import { Avatar, CardHeader, Icon, TextField } from "@mui/material";
 
 export default function Comments(props) {

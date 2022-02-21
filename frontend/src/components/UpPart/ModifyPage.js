@@ -1,7 +1,6 @@
-import { Box, Container } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import { Container } from "@mui/material";
+import React from "react";
 import { useSelector } from "react-redux";
-import { afs } from "../../apiCalls/tryData";
 import LearnRepeat from "../../pages/LearnRepeat";
 import LearnRepeatBelow from "../BelowPart/LearnRepeatBelow";
 import Indicators from "../Indicator/Indicators";

@@ -1,10 +1,8 @@
 import { Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 const Pic = (props) => {
   const { dataItem, whichSide } = props;
-  const cp = useSelector((state) => state.post.currentPost);
 
   useEffect(() => {}, [dataItem]);
   const useStyles = makeStyles((theme) => ({

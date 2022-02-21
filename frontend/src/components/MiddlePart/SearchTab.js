@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import FollowGrid from "./FollowGrid";
 import PostList from "./PostList";
-import { afs } from "../../apiCalls/tryData";
-import NewPost from "./NewPost";
-import ProfileImageData from "./ProfileImageData";
 import { AppBar, Divider, Tab, Tabs, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 

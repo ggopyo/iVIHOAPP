@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { Comment, Delete, FavoriteBorder } from "@mui/icons-material";
+import { Comment, FavoriteBorder } from "@mui/icons-material";
 import {
   Avatar,
   Card,
@@ -13,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import Favorite from "@mui/icons-material/Favorite";
-import { afs, getOneData1, like, unlike } from "../../apiCalls/tryData";
+import { like, unlike } from "../../apiCalls/tryData";
 import { useSelector } from "react-redux";
 import Comments from "./Comments";
 
@@ -65,7 +64,7 @@ export default function Post(props) {
       <CardContent>
         <Typography component="p">{props.post.desc}</Typography>
         <div>
-          <img src={props.post.core}  alt=""/>
+          <img src={props.post.core} alt="" />
         </div>
       </CardContent>
       <CardActions>

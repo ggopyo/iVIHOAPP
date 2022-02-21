@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { dataRequest } from "./requestMethod";
 const getOneData = async (id) => {
   try {

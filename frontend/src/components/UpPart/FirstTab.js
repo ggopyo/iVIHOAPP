@@ -1,50 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
-import FollowGrid from "./FollowGrid";
-import PostList from "./PostList";
-import { afs } from "../../apiCalls/tryData";
-import NewTab from "./NewTab";
-import ProfileImageData from "./ProfileImageData";
+import React from "react";
 import SearchTab from "./SearchTab";
 import NewPostTab from "./NewPostTab";
 import MiddleTab from "./MiddleTab";
 import NeedLogin from "./NeedLogin";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import { slide as Menu } from "react-burger-menu";
-import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
-import { CardActionArea, CardActions } from "@mui/material";
-import {
-  AppBar,
-  Avatar,
-  Button,
-  Container,
-  Divider,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Paper,
-  Tab,
-  Tabs,
-  Typography,
-  mySearchInputProps,
-} from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import { Box, width } from "@mui/system";
-import {
-  Email,
-  FindInPage,
-  GetApp,
-  GitHub,
-  Send,
-  SwapHoriz,
-} from "@mui/icons-material";
 import { useSelector } from "react-redux";
-import LoginForm from "./LoginForm";
 import SearchResultComponent from "./SearchResultComponent";
 import TopDivider from "./TopDivider";
-import MyDataGrid from "./MyDataGrid";
+import { Typography } from "@mui/material";
 
 export default function ProfileTabs(props) {
   const {
@@ -58,9 +20,8 @@ export default function ProfileTabs(props) {
 
   const { mineUpdated, myPosts, values, addUpdate, myStatistic } = myDataGroup;
   const { profileUser } = values.user;
-  const { myResult, myGridResult, lastHistory } = mySearchInputProps;
+  const { myResult, lastHistory } = mySearchInputProps;
   const currentUser = useSelector((state) => state.login.currentUser);
-  const currentPost = useSelector((state) => state.post.currentPost);
 
   return (
     <div
@@ -222,8 +183,4 @@ const TabContainer = (props) => {
       {props.children}
     </Typography>
   );
-};
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
 };

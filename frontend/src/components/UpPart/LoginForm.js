@@ -1,19 +1,11 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
-import React, { useEffect } from "react";
-import { Box } from "@mui/system";
+import { Button, FormControl, TextField } from "@mui/material";
+import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../apiCalls/apiCalls";
 
 import { makeStyles } from "@mui/styles";
-import { publicRequest } from "../../apiCalls/requestMethod";
-import { afs, getNewest } from "../../apiCalls/tryData";
+import { getNewest } from "../../apiCalls/tryData";
 import { select } from "../../redux/postRedux";
 const LoginForm = () => {
   const [username, setUsername] = useState("");

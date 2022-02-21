@@ -1,15 +1,10 @@
 import {
-  alpha,
   Divider,
-  InputBase,
-  styled,
-  InputAdornment,
 } from "@mui/material";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { makeStyles } from "@mui/styles";
 import { TextField } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
 const SidebarSearchInputComponent = (props) => {
   const { setMySearchText, mySearchText } = props;
 

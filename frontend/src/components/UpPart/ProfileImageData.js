@@ -1,18 +1,14 @@
-import { useEffect } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import { afs } from "../../apiCalls/tryData";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { select, selectFailure } from "../../redux/postRedux";
-import { useState } from "react";
 
 export default function TitlebarBelowImageList(props) {
   const { posts, identifier, setTab } = props;
 
   const dispatch = useDispatch();
-  const [howtoLogo, setHowtoLogo] = useState([]);
   let currentPost = null;
   const selectPost = (post) => {
     dispatch(select(post));

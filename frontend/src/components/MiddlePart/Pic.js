@@ -2,7 +2,6 @@ import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { dataRequest } from "../../apiCalls/requestMethod";
-import { afs } from "../../apiCalls/tryData";
 const Pic = () => {
   const cp = useSelector((state) => state.post.currentPost);
   const [howtoLogo, setHowtoLogo] = useState();

@@ -8,7 +8,6 @@ import {
   Divider,
   List,
   ListItemAvatar,
-  ListSubheader,
   Typography,
 } from "@mui/material";
 import ReactStars from "react-rating-stars-component";
