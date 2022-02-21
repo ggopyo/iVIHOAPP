@@ -27,7 +27,7 @@ import NotificationForm from "./NotificationForm";
 
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/loginRedux";
-import { selectOff } from "../../redux/selectedUserRedux";
+
 import { Link } from "react-router-dom";
 import SearchInputComponent from "../UpPart/SearchInputComponent";
 import { useState } from "react";
@@ -113,7 +113,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar(props) {
-  const { toggleFunc, searchInputInside, searchInputProps } = props;
+  const { searchInputProps } = props;
   const { result, searchInputHandleSubmit } = searchInputProps;
   const currentUser = useSelector((state) => state.login.currentUser);
   const [registrationOpen, setRegistrationOpen] = useState(false);
@@ -154,9 +154,6 @@ export default function Navbar(props) {
     dispatch(logout());
   };
 
-  const takeOutSelectedUser = () => {
-    dispatch(selectOff());
-  };
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -230,9 +227,12 @@ export default function Navbar(props) {
       </MenuItem>
     </Menu>
   );
-  //   '#2E3B55' }}
   return (
-    <Box style={{ marginBottom: "64px" }}>
+    <Box
+      style={{
+        marginBottom: "64px",
+      }}
+    >
       <AppBar
         position="fixed"
         style={{ background: "#FFFBF2", height: "43px" }}
@@ -249,20 +249,9 @@ export default function Navbar(props) {
               letterSpacing: "1.5px",
             }}
           >
-            {/* <Badge badgeContent={7} variant="dot" color="primary">
-              <NotificationsIcon />
-            </Badge> */}
             iVIHO.com
           </Button>
-          {/* <Button
-            onClick={takeOutSelectedUser}
-            style={{ color: "black", marginLeft: "-10px" }}
-          >
-            <Badge badgeContent={7} variant="dot" color="primary">
-              <NotificationsIcon />
-            </Badge>
-            selectedUser 빼기
-          </Button> */}
+
           <Box sx={{ flexGrow: 1, marginLeft: "475px" }}>
             {result.length !== 0 ? (
               <form
@@ -288,39 +277,8 @@ export default function Navbar(props) {
             )}
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={notificationOpen}
-                onClose={notificationHandleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                  timeout: 500,
-                }}
-                style={{ width: "338px" }}
-              >
-                <Fade in={notificationOpen}>
-                  <Box sx={notificationStyle}>
-                    <NotificationForm />
-                  </Box>
-                </Fade>
-              </Modal>
-            </IconButton>
             {!currentUser || currentUser.username === "guest" ? (
               <>
-                {/* <Button
-                  onClick={(e) => logoutHandler()}
-                  style={{ color: "black" }}
-                >
-                  <LogoutIcon />
-                  로그아웃
-                </Button> */}
                 <Typography style={{ marginTop: "8px", marginRight: "10px" }}>
                   {currentUser
                     ? currentUser.username === "guest" &&

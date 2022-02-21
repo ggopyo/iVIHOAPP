@@ -4,6 +4,7 @@ import PostStatistics from "./PostStatistics";
 import NeedSelectUser from "./NeedSelectUser";
 import {
   AppBar,
+  Button,
   Divider,
   Paper,
   Tab,
@@ -11,11 +12,12 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Following from "./Following";
 import Follower from "./Follower";
 import UserProfile from "./UserProfile";
 
+import { selectOff } from "../../redux/selectedUserRedux";
 export default function ProfileTabs(props) {
   const {
     posts,
@@ -27,14 +29,16 @@ export default function ProfileTabs(props) {
   } = props;
   const selectedUser = useSelector((state) => state.selectUser.selectedUser);
   const { addUpdate, clickFollowButton, values: userStatus } = myProfileGroup;
-
   const { triggerRightProfile, triggerRightProfileFlag } = triggerTabObject;
   const [tab, setTab] = useState(0);
   const currentUser = useSelector((state) => state.login.currentUser);
   const handleTabChange = (event, value) => {
     setTab(value);
   };
-
+  const dispatch = useDispatch();
+  const takeOutSelectedUser = () => {
+    dispatch(selectOff());
+  };
   useEffect(() => {
     if (whichSide === "right") {
       setTab(0);
@@ -71,6 +75,7 @@ export default function ProfileTabs(props) {
       }}
       elevation={1}
     >
+      {" "}
       <AppBar
         elevation={0}
         position="static"
@@ -94,7 +99,6 @@ export default function ProfileTabs(props) {
           className={classes.root}
           style={{ marginLeft: "10px" }}
         >
-          {" "}
           <Tab
             className={classes.root}
             label={
@@ -186,6 +190,7 @@ export default function ProfileTabs(props) {
               whichSide={whichSide}
               userStatus={userStatus}
               clickFollowButton={clickFollowButton}
+              takeOutSelectedUser={takeOutSelectedUser}
             />
           ) : (
             <NeedSelectUser />

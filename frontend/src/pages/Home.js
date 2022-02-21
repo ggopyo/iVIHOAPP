@@ -48,7 +48,6 @@ const Home = () => {
     setTab(6);
     setMySearchUpdated(!mySearchUpdated);
   };
-
   const handleTabChange = (event, value) => {
     setTab(value);
   };
@@ -62,14 +61,12 @@ const Home = () => {
         });
     });
   };
-
   const checkFollow = (others) => {
     const match = others.followers.some(
       (follower) => follower._id === currentUser._id
     );
     return match;
   };
-
   const addUpdate = (post, identifier) => {
     afs(post);
     setMyPosts(updateArray(myPosts, post, identifier));
@@ -113,12 +110,13 @@ const Home = () => {
   const searchInputHandleSubmit = (event, searchText) => {
     event.preventDefault();
     event.target.reset();
-    setSearchUpdated(true);
+
     if (searchText.match(searchRegex))
       searchAllContents(searchText)
         .then((tempArray) => {
           setResult(tempArray);
           setSearchInputInside(false);
+          setSearchUpdated(true);
         })
         .catch((err) => {
           console.log(err);
@@ -153,7 +151,6 @@ const Home = () => {
   return (
     <HomeContainer>
       <Navbar
-        style={{ width: "100%" }}
         searchInputInside={searchInputInside}
         searchInputProps={searchInputProps}
       />

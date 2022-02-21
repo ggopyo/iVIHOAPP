@@ -1,4 +1,5 @@
 import {
+  Cancel,
   Email,
   Face,
   FindInPage,
@@ -25,13 +26,25 @@ import { afs } from "../../apiCalls/general/tryData";
 import FollowProfileButton from "./FollowProfileButton";
 
 const UserProfile = (props) => {
-  const { whichSide, clickFollowButton, userStatus } = props;
+  const { whichSide, clickFollowButton, userStatus, takeOutSelectedUser } =
+    props;
   const selectedUser = useSelector((state) => state.selectUser.selectedUser);
   const currentUser = useSelector((state) => state.login.currentUser);
   const showUser = whichSide === "left" ? currentUser : selectedUser;
 
   return (
     <div>
+      <ButtonBase
+        onClick={takeOutSelectedUser}
+        style={{
+          color: "black",
+          marginLeft: "300px",
+          position: "absolute",
+          borderRadius: "5px",
+        }}
+      >
+        <Cancel style={{ width: "30px", height: "30px" }} />
+      </ButtonBase>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Card sx={{ width: 460, height: 215 }}>
           <CardMedia

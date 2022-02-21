@@ -205,7 +205,7 @@ const ProfileViewPage = (props) => {
           }}
         >
           <Search
-            // addUpdate={addUpdate} 이거 잘 지켜봐야함
+            // addUpdate={addUpdate}
             posts={yourPosts}
             profileUser={values.user}
             mySearchInputProps={mySearchInputProps}

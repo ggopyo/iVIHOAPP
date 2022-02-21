@@ -1,4 +1,5 @@
 import { dataRequest, publicRequest } from "./apiCalls/general/requestMethod";
+import { afs } from "./apiCalls/general/tryData";
 
 export const getCurrentUser = async (currentUser) => {
   try {
@@ -112,6 +113,23 @@ export const searchContents = async (mySearchText, currentUser) => {
     console.log(err);
   }
 };
+export const searchAllContents = async (searchText) => {
+  try {
+    const res = await dataRequest.get("/data/search/" + searchText);
+    const { returnedYoutubeData, returnedHowtoData, returnedImageData } =
+      res.data;
+
+    const tempArray = [
+      ...returnedYoutubeData,
+      ...returnedHowtoData,
+      ...returnedImageData,
+    ];
+    return tempArray;
+  } catch (err) {
+    alert("오류");
+    console.log(err);
+  }
+};
 
 export const updateArray = (myPosts, post, identifier) => {
   let updatedArray;
@@ -138,21 +156,5 @@ export const updateArray = (myPosts, post, identifier) => {
       return tempPosts;
     default:
       break;
-  }
-};
-export const searchAllContents = async (searchText) => {
-  try {
-    const res = await dataRequest.get("/data/search/" + searchText);
-    const { returnedYoutubeData, returnedHowtoData, returnedImageData } =
-      res.data;
-    const tempArray = [
-      ...returnedYoutubeData,
-      ...returnedHowtoData,
-      ...returnedImageData,
-    ];
-    return tempArray;
-  } catch (err) {
-    alert("오류");
-    console.log(err);
   }
 };
