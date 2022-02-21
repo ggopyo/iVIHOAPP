@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 
-import { publicRequest } from "../../apiCalls/general/requestMethod";
+import { publicRequest } from "../apiCalls/general/requestMethod";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Box, Container } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import { getOneUserByUsername } from "../../apiCalls/general/tryData";
+import { getOneUserByUsername } from "../apiCalls/general/tryData";
 
-import LeftTab from "./LeftTab";
-import PicDouble from "./PicDouble";
+import LeftTab from "../components/BelowPart/LeftTab";
+import PicDouble from "../components/BelowPart/PicDouble";
 
 const LearnRepeatBelow = () => {
   const onMyItemClick = useCallback((event, j) => {

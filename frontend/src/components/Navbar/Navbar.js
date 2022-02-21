@@ -112,7 +112,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function MuiNavbar(props) {
+export default function Navbar(props) {
   const { toggleFunc, searchInputInside, searchInputProps } = props;
   const { result, searchInputHandleSubmit } = searchInputProps;
   const currentUser = useSelector((state) => state.login.currentUser);
@@ -232,7 +232,7 @@ export default function MuiNavbar(props) {
   );
   //   '#2E3B55' }}
   return (
-    <Box>
+    <Box style={{ marginBottom: "64px" }}>
       <AppBar
         position="fixed"
         style={{ background: "#FFFBF2", height: "43px" }}

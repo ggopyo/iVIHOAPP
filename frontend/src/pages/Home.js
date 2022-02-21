@@ -1,58 +1,57 @@
 import React, { useEffect, useRef, useState } from "react";
-import MuiNavbar from "../components/Navbar/MuiNavbar";
-import ProfileView from "../components/UpPart/ProfileView";
+import Navbar from "../components/Navbar/Navbar";
+import ProfileViewPage from "../components/UpPart/ProfileViewPage";
 import ModifyPage from "../components/UpPart/ModifyPage";
 import FixedSideBar from "../components/UpPart/FixedSideBar";
 import { useSelector } from "react-redux";
-import { dataRequest, publicRequest } from "../apiCalls/general/requestMethod";
 import { Container } from "@mui/material";
 import { searchRegex } from "../regex/regex";
-import { getCurrentUser, searchAllContents, searchContents } from "../homeApis";
+import styled from "styled-components";
+import BottomMargin from "./BottomMargin";
+import {
+  getCurrentUser,
+  searchAllContents,
+  searchContents,
+  updateArray,
+} from "../homeApis";
+import { afs } from "../apiCalls/general/tryData";
 
 const Home = () => {
-  const [tab, setTab] = useState(0);
-
   const currentUser = useSelector((state) => state.login.currentUser);
-
-  const handleTabChange = (event, value) => {
-    setTab(value);
-  };
-
-  const searchActivate = () => {
-    setTab(6);
-    setMySearchUpdated(!mySearchUpdated);
-  };
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const menuIsOpen = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-  const [searchInputInside, setSearchInputInside] = useState(true);
-
-  const [result, setResult] = useState([]);
-  const [lastHistory, setLastHistory] = useState();
-  const [myResult, setMyResult] = useState([]);
-  const [myGridResult, setMyGridResult] = useState({});
-  const [searchUpdated, setSearchUpdated] = useState(false);
-  const [mySearchUpdated, setMySearchUpdated] = useState(false);
-  const [refs, setRefs] = useState([]);
+  const selectedUser = useSelector((state) => state.selectUser.selectedUser);
+  const [tab, setTab] = useState(0);
   const firstRef = useRef(null);
 
   const [mineUpdated, setMineUpdated] = useState(false);
-  const [myPosts, setMyPosts] = useState({ howto: [], image: [], youtube: [] });
   const [myStatistic, setMyStatistic] = useState({
     dataCount: null,
     commentsCount: null,
     likesCount: null,
     swapCount: null,
   });
+  const [lastHistory, setLastHistory] = useState();
+  const [myResult, setMyResult] = useState([]);
+  const [myGridResult, setMyGridResult] = useState({});
+  const [mySearchUpdated, setMySearchUpdated] = useState(false);
+  const [searchUpdated, setSearchUpdated] = useState(false);
+  const [result, setResult] = useState([]);
+  const [searchInputInside, setSearchInputInside] = useState(true);
+  const [refs, setRefs] = useState([]);
+  const [myPosts, setMyPosts] = useState({ howto: [], image: [], youtube: [] });
   const [updated, setUpdated] = useState(false);
   const [values, setValues] = useState({
     user: { following: [], followers: [] },
     redirectToSignin: false,
     following: false,
   });
+  const searchActivate = () => {
+    setTab(6);
+    setMySearchUpdated(!mySearchUpdated);
+  };
 
-  const selectedUser = useSelector((state) => state.selectUser.selectedUser);
+  const handleTabChange = (event, value) => {
+    setTab(value);
+  };
   const clickFollowButton = (callAPI) => {
     callAPI(currentUser._id, selectedUser._id).then((data) => {
       if (data)
@@ -72,29 +71,8 @@ const Home = () => {
   };
 
   const addUpdate = (post, identifier) => {
-    let updatedArray;
-    switch (identifier) {
-      case "image":
-        updatedArray = [...myPosts.image];
-        updatedArray.unshift(post);
-        let { image, ...otherImage } = myPosts;
-        setMyPosts({ ...otherImage, image: updatedArray });
-        break;
-      case "youtube":
-        updatedArray = [...myPosts.youtube];
-        updatedArray.unshift(post);
-        let { youtube, ...otherYoutube } = myPosts;
-        setMyPosts({ ...otherYoutube, youtube: updatedArray });
-        break;
-      case "howto":
-        updatedArray = [...myPosts.howto];
-        updatedArray.unshift(post);
-        let { howto, ...otherHowto } = myPosts;
-        setMyPosts({ ...otherHowto, howto: updatedArray });
-        break;
-      default:
-        break;
-    }
+    afs(post);
+    setMyPosts(updateArray(myPosts, post, identifier));
     setMineUpdated(!mineUpdated);
   };
   const removePost = (post) => {
@@ -168,70 +146,42 @@ const Home = () => {
     setTab,
   };
 
+  const HomeContainer = styled.div`
+    width: 1260px;
+    overflow: "hidden";
+  `;
   return (
-    <div style={{ width: "1260px", overflow: "hidden" }}>
-      <MuiNavbar
+    <HomeContainer>
+      <Navbar
         style={{ width: "100%" }}
         searchInputInside={searchInputInside}
         searchInputProps={searchInputProps}
       />
-
-      <div style={{ paddingTop: "64px" }}>
-        <div
-          style={{
-            backgroundColor: "black",
-            padding: "10px 8px 10px 0px",
-            marginTop: "0px",
-            width: "95px",
-            position: "fixed",
-            borderTopRightRadius: "8px",
-            borderBottomRightRadius: "8px",
-          }}
-        >
-          <FixedSideBar
-            handleTabChange={handleTabChange}
-            tab={tab}
-            firstRef={firstRef}
-            sidebarHandle={menuIsOpen}
-            mySearchInputProps={mySearchInputProps}
-          />
-        </div>
-        <ProfileView
-          myProfileGroup={myProfileGroup}
-          myDataGroup={myDataGroup}
-          tab={tab}
-          setTab={setTab}
-          setSearchInputInside={setSearchInputInside}
-          searchInputProps={searchInputProps}
-          mySearchInputProps={mySearchInputProps}
-        />
-        <div ref={firstRef} style={{ marginBottom: "0px" }} />
-        <ModifyPage
-          tab={tab}
-          setTab={setTab}
-          setRefs={setRefs}
-          myGridResult={myGridResult}
-          mySearchInputProps={mySearchInputProps}
-        />
-      </div>
-      <Container
-        style={{ marginLeft: "80px", marginRight: "0px", width: "1200px" }}
-      >
-        <div
-          style={{
-            width: "99%",
-            height: "30px",
-            marginTop: "0px",
-            marginLeft: "10px",
-            borderBottomLeftRadius: "10px",
-            borderBottomRightRadius: "10px",
-            marginBottom: "435px",
-            backgroundColor: "#0E5711",
-          }}
-          alt=""
-        />{" "}
-      </Container>
-    </div>
+      <FixedSideBar
+        tab={tab}
+        firstRef={firstRef}
+        handleTabChange={handleTabChange}
+        mySearchInputProps={mySearchInputProps}
+      />
+      <ProfileViewPage
+        tab={tab}
+        setTab={setTab}
+        myProfileGroup={myProfileGroup}
+        myDataGroup={myDataGroup}
+        mySearchInputProps={mySearchInputProps}
+        setSearchInputInside={setSearchInputInside}
+        searchInputProps={searchInputProps}
+      />
+      <ModifyPage
+        firstRef={firstRef}
+        tab={tab}
+        setTab={setTab}
+        setRefs={setRefs}
+        myGridResult={myGridResult}
+        mySearchInputProps={mySearchInputProps}
+      />
+      <BottomMargin />
+    </HomeContainer>
   );
 };
 

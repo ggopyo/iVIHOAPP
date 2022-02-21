@@ -16,7 +16,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
   login: loginReducer,
   post: postReducer,
-
   search: searchReducer,
   selectUser: selectedUserReducer,
 });

@@ -2,13 +2,13 @@ import { Container } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import LearnRepeat from "../../pages/LearnRepeat";
-import LearnRepeatBelow from "../BelowPart/LearnRepeatBelow";
+import LearnRepeatBelow from "../../pages/LearnRepeatBelow";
 import Indicators from "../Indicator/Indicators";
 
 import MyDataGrid from "../UpPart/MyDataGrid";
 
 const ModifyPage = (props) => {
-  const { tab, setTab, myGridResult } = props;
+  const { tab, setTab, myGridResult, firstRef } = props;
 
   const currentUser = useSelector((state) => state.login.currentUser);
   const currentPost = useSelector((state) => state.post.currentPost);
@@ -131,6 +131,7 @@ const ModifyPage = (props) => {
           )}
         </>
       )}
+      <div ref={firstRef} />
     </Container>
   );
 };

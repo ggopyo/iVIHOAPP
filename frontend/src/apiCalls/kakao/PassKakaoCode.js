@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import Spinner from "../../components/Spinner";
-import MuiNavbar from "../../components/Navbar/MuiNavbar";
+import Navbar from "../../components/Navbar/Navbar";
 import { slide as Menu } from "react-burger-menu";
 const qs = require("qs");
 const { kakaoLogin } = require("../general/apiCalls");
@@ -48,7 +48,7 @@ const PassKakaoCode = () => {
   //과하게 구분한다고 생각해서 이곳에서 Dispatch 선언하고 함수 호출할 때 넘겨줌
   return (
     <div>
-      <MuiNavbar style={{ width: "100%" }} />
+      <Navbar style={{ width: "100%" }} />
       <div style={{ paddingTop: "61px" }}>
         <Spinner />
       </div>

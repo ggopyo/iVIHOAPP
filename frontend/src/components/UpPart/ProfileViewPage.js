@@ -11,7 +11,7 @@ import {
   publicRequest,
 } from "../../apiCalls/general/requestMethod";
 import { useLocation } from "react-router-dom";
-const View = (props) => {
+const ProfileViewPage = (props) => {
   const {
     executeScroll,
     executeScroll2,
@@ -236,4 +236,4 @@ const View = (props) => {
   );
 };
 
-export default View;
+export default ProfileViewPage;

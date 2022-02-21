@@ -113,6 +113,33 @@ export const searchContents = async (mySearchText, currentUser) => {
   }
 };
 
+export const updateArray = (myPosts, post, identifier) => {
+  let updatedArray;
+  let tempPosts;
+  switch (identifier) {
+    case "image":
+      updatedArray = [...myPosts.image];
+      updatedArray.unshift(post);
+      let { image, ...otherImage } = myPosts;
+      tempPosts = { ...otherImage, image: updatedArray };
+      return tempPosts;
+
+    case "youtube":
+      updatedArray = [...myPosts.youtube];
+      updatedArray.unshift(post);
+      let { youtube, ...otherYoutube } = myPosts;
+      tempPosts = { ...otherYoutube, youtube: updatedArray };
+      return tempPosts;
+    case "howto":
+      updatedArray = [...myPosts.howto];
+      updatedArray.unshift(post);
+      let { howto, ...otherHowto } = myPosts;
+      tempPosts = { ...otherHowto, howto: updatedArray };
+      return tempPosts;
+    default:
+      break;
+  }
+};
 export const searchAllContents = async (searchText) => {
   try {
     const res = await dataRequest.get("/data/search/" + searchText);
