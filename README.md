@@ -28,3 +28,4 @@ npm i를 실행하여 주시면 됩니다.
 검색하실 수 있습니다.
 
 왼쪽 고정 메뉴바를 클릭하면 그 클릭된 값에 따라 화면에 표시되는 내용이 변경됩니다. 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
